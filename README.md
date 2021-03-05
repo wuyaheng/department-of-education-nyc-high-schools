@@ -1,2 +1,2 @@
 # department-of-education-nyc-high-schools
-Department of Education High Schools in 2019
+Department of Education High Schools in 2020
