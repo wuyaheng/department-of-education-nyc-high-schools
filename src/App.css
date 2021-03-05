@@ -62,3 +62,8 @@ body {
   select {
     display: block !important;
   }
+
+  select:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }

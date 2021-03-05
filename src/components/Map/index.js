@@ -15,7 +15,7 @@ export default ({results=[]}) => {
         // Creating map object
         var myMap = L.map("map", {
             center: [40.7128, -74.0059],
-            zoom: 11
+            zoom: 10
         });
         
         // Adding tile layer
