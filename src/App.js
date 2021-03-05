@@ -96,7 +96,7 @@ class App extends Component {
           </nav>
         
         <div className="container-fluid mt-2">
-        <div className="row">
+        <div className="row mb-0">
         <div className="col-md-2">
         <div className="card">
       <h6 className="p-0 mt-1 mb-1"><b>Select a Neighborhood</b></h6> 
