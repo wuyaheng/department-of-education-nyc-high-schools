@@ -27,7 +27,7 @@ const Table = (props) => {
 
     let rowData = []
     props.results.map((ele, i) => rowData.push( 
-      {School_Name: ele.school_name, 
+      {School_Name: "<b>" + ele.school_name + "</b>", 
        Overview: ele.overview_paragraph, 
        Academic_Opportunities: "<li>" + ele.academicopportunities1 +"</li><li>"+ ele.academicopportunities2 + "</li><li>" + ele.academicopportunities3 + "</li><li>" + ele.academicopportunities4 + "</li><li>" + ele.academicopportunities5 + "</li>"}
       ))
