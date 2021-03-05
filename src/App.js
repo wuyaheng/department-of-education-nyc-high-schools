@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from "./components/Map/index";
 import ChooseNTA from "./components/ChooseNTA/index";
+import MapBox from "./components/MapBox/index";
 import geodata from "./data/nyc.geojson";
 import axios from "axios";
 
@@ -96,7 +97,7 @@ class App extends Component {
         <div className="container-fluid mt-2">
         <div className="row">
         <div className="col-md-2">
-        <div className="card mt-0" style={{height: "85vh"}}>
+        <div className="card" style={{height: "85vh"}}>
       <div className="searchCard">
       <p className="pt-1">&nbsp; <b>Choose a Neighborhood</b></p> 
         <ChooseNTA results={this.state.nta} handleInputChange={this.handleInputChange} /> 
@@ -104,10 +105,14 @@ class App extends Component {
         </div>
         </div>
         <div className="col-md-5">
+          <div className="card">
           <Map results = {this.state.geo}/> 
+          </div>
         </div>
         <div className="col-md-5">
-    
+        <div className="card">
+          <MapBox results = {this.state.schools}/>
+          </div>
         </div>
         </div>
         </div> 

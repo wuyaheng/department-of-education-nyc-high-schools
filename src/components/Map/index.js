@@ -7,10 +7,10 @@ export default ({results=[]}) => {
 
   React.useEffect(() => {
     console.log(results)
-    const MAP_CONTAINER = document.getElementById("map-container");
+    const MAP_CONTAINER1 = document.getElementById("map-container1");
       const MAP_ID = document.createElement("div");
       MAP_ID.setAttribute("id", "map");
-      MAP_CONTAINER.appendChild(MAP_ID);
+      MAP_CONTAINER1.appendChild(MAP_ID);
 
         // Creating map object
         var myMap = L.map("map", {
@@ -85,9 +85,9 @@ export default ({results=[]}) => {
             }
             }).addTo(myMap);
 
-    return () => (MAP_CONTAINER.innerHTML = ""); 
+    return () => (MAP_CONTAINER1.innerHTML = ""); 
   }, [results]);
 
-  return <div id="map-container"></div>; 
+  return <div id="map-container1"></div>; 
 };
 

@@ -6,6 +6,14 @@ body {
   #map {
     height: 85vh;
   }
+
+  #map-container {
+    height: 85vh;
+  }
+
+  #mapid {
+    height: 85vh;
+  }
   
   .leaflet-popup-content {
     text-align: center;
