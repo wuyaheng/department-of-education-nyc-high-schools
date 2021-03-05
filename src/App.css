@@ -72,3 +72,8 @@ body {
     font-weight: 600;
     color: #455a64;
   }
+
+  .leaflet-tooltip{
+    width: 250px !important;
+    white-space: normal !important; 
+  }

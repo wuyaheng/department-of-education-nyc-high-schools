@@ -28,7 +28,7 @@ export default (props) => {
 
 
       props.pins.forEach((pin) =>
-        L.marker([pin.latitude, pin.longitude]).addTo(schoolMap).bindTooltip('<b>' + pin.school_name + '</b>')  
+        L.marker([pin.latitude, pin.longitude]).addTo(schoolMap).bindTooltip('<b>' + pin.school_name + '</b><p>' + pin.overview_paragraph + '</p>')  
       );
     }
 
