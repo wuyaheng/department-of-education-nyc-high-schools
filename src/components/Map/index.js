@@ -81,7 +81,7 @@ export default ({results=[]}) => {
                 }
                 });
                 // Giving each feature a pop-up with information about that specific feature
-                layer.bindTooltip("<h6>" + feature.properties.neighborhood + "</h6>");
+                layer.bindTooltip("<p><b>" + feature.properties.neighborhood + "</b></p>");
             }
             }).addTo(myMap);
 

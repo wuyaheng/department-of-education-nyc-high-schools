@@ -98,7 +98,7 @@ class App extends Component {
         <div className="row">
         <div className="col-md-2">
         <div className="card">
-      <h6 className="p-0 mt-1 mb-1"><b>Choose a Neighborhood</b></h6> 
+      <h6 className="p-0 mt-1 mb-1"><b>Select a Neighborhood</b></h6> 
         <ChooseNTA results={this.state.nta} handleInputChange={this.handleInputChange} /> 
 
         </div>

@@ -11,7 +11,9 @@ export default (props) => {
       MAP_ID.setAttribute("id", "mapid");
       MAP_CONTAINER2.appendChild(MAP_ID);
 
-      const schoolMap = L.map("mapid").setView([props.lat, props.lon], 10);
+      let schoolMap; 
+      props.pins.length > 200 ? 
+      schoolMap = L.map("mapid").setView([props.lat, props.lon], 10) : schoolMap = L.map("mapid").setView([props.lat, props.lon], 14)
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -28,7 +30,7 @@ export default (props) => {
 
 
       props.pins.forEach((pin) =>
-        L.marker([pin.latitude, pin.longitude]).addTo(schoolMap).bindTooltip('<b>' + pin.school_name + '</b><p>' + pin.overview_paragraph + '</p>')  
+        L.marker([pin.latitude, pin.longitude]).addTo(schoolMap).bindTooltip('<b>' + pin.school_name + '</b><p>Phone: ' + pin.phone_number + '</p><p>Email: ' + pin.school_email + '</p><p>Website: ' + pin.website + '</p>')  
       );
     }
 

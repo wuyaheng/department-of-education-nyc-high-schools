@@ -4,15 +4,15 @@ body {
   }
   
   #map {
-    height: 85vh;
+    height: 60vh;
   }
 
   #map-container {
-    height: 85vh;
+    height: 60vh;
   }
 
   #mapid {
-    height: 85vh;
+    height: 60vh;
   }
   
   .leaflet-popup-content {
@@ -74,6 +74,11 @@ body {
   }
 
   .leaflet-tooltip{
-    width: 250px !important;
+    width: 300px !important;
     white-space: normal !important; 
+  }
+
+  p {
+    padding: 0rem;
+    margin: 0rem;
   }
