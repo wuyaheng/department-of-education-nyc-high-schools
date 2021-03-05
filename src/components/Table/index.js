@@ -27,18 +27,18 @@ const Table = (props) => {
 
     let rowData = []
     props.results.map((ele, i) => rowData.push( 
-      {Name: ele.school_name, 
+      {School_Name: ele.school_name, 
        Overview: ele.overview_paragraph, 
-       Opportunities: ele.academicopportunities1}
+       Academic_Opportunities: "<li>" + ele.academicopportunities1 +"</li><li>"+ ele.academicopportunities2 + "</li><li>" + ele.academicopportunities3 + "</li><li>" + ele.academicopportunities4 + "</li><li>" + ele.academicopportunities5 + "</li>"}
       ))
 
 
     let columnDefs = [
       {
-        field: 'Name',
-        headerName: 'Name',
+        field: 'School_Name',
+        headerName: 'School_Name',
         cellRenderer: function(params) {
-          return params.data.Name;
+          return params.data.School_Name;
         },
         flex: 1,
       },
@@ -51,10 +51,10 @@ const Table = (props) => {
         flex: 1,
       },
       {
-        field: 'Opportunities',
-        headerName: 'Opportunities',
+        field: 'Academic_Opportunities',
+        headerName: 'Academic_Opportunities',
         cellRenderer: function(params) {
-          return params.data.Opportunities;
+          return params.data.Academic_Opportunities;
         },
         flex: 1,
       }]
@@ -67,9 +67,9 @@ const Table = (props) => {
                 defaultColDef={defaultColDef}
                 columnDefs={columnDefs}
                 > 
-                <AgGridColumn field="Name"></AgGridColumn>
+                <AgGridColumn field="School_Name"></AgGridColumn>
                 <AgGridColumn field="Overview"></AgGridColumn>
-                <AgGridColumn field="Opportunities"></AgGridColumn>
+                <AgGridColumn field="Academic_Opportunities"></AgGridColumn>
             </AgGridReact>
         </div>
     );
