@@ -67,3 +67,8 @@ body {
     box-shadow: none !important;
     outline: none !important;
   }
+
+  .numberOfSchools {
+    font-weight: 600;
+    color: #455a64;
+  }

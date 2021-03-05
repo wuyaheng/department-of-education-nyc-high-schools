@@ -96,20 +96,24 @@ class App extends Component {
         
         <div className="container-fluid mt-2">
         <div className="row">
-        <div className="col-md-2">
+        <div className="col-md-4">
         <div className="card" style={{height: "85vh"}}>
       <div className="searchCard p-1">
-      <p className="p-0 m-0">&nbsp;<b>Choose a Neighborhood</b></p> 
+      <h6 className="p-0 m-0 mb-1"><b>Choose a Neighborhood</b></h6> 
         <ChooseNTA results={this.state.nta} handleInputChange={this.handleInputChange} /> 
+        <div className="card text-center">
+        <h6>Number of High Schools</h6>
+          <h2 className="numberOfSchools">{this.state.schools.length}</h2>
+        </div>
       </div>
         </div>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-4">
           <div className="card">
           <Map results = {this.state.geo}/> 
           </div>
         </div>
-        <div className="col-md-5">
+        <div className="col-md-4">
         <div className="card">
           <MapBox results = {this.state.schools}/>
           </div>
