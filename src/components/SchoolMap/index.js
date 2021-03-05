@@ -30,7 +30,7 @@ export default (props) => {
 
 
       props.pins.forEach((pin) =>
-        L.marker([pin.latitude, pin.longitude]).addTo(schoolMap).bindTooltip('<b>' + pin.school_name + '</b><p>Phone: ' + pin.phone_number + '</p><p>Email: ' + pin.school_email + '</p><p>Website: ' + pin.website + '</p>')  
+        L.marker([pin.latitude, pin.longitude]).addTo(schoolMap).bindTooltip('<b>' + pin.school_name + '</b><p><b>Phone:</b> ' + pin.phone_number + '</p><p><b>Email:</b> ' + pin.school_email + '</p><p><b>Website:</b> ' + pin.website + '</p><p><b>Location:</b> ' + pin.location.split("(")[0] + '</p><p><b>Admissions Priority:</b> ' + pin.admissionspriority11 + '</p><p><b>Time:</b> ' + pin.start_time + ' - ' + pin.end_time + '</p><p><b>Subway:</b> ' + pin.subway + '</p><p><b>Bus:</b> ' + pin.bus + '</p>')  
       );
     }
 
