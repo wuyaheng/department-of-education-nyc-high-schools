@@ -4,6 +4,7 @@ import Map from "./components/Map/index";
 import ChooseNTA from "./components/ChooseNTA/index";
 import MapBox from "./components/MapBox/index";
 import geodata from "./data/nyc.geojson";
+import Table from "./components/Table/index";
 import axios from "axios";
 
 const ALLNEIGHBORHOOD = "All Neighborhood"
@@ -25,8 +26,8 @@ class App extends Component {
       () => {
       this.fetchSchools()
       });
-    this.fetchnta();
     this.fetchdata()
+    this.fetchnta();
   }
 
   fetchdata = async () => {
@@ -120,6 +121,12 @@ class App extends Component {
           </div>
         </div>
         </div>
+
+        <div className="row mb-0">
+      <div className="col-md-12 table-responsive">
+        <Table results={this.state.schools} /> 
+      </div>
+      </div>
         </div> 
         </>
       );
