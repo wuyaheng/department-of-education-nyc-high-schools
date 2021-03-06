@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Map from "./components/Map/index";
 import ChooseNTA from "./components/ChooseNTA/index";
 import MapBox from "./components/MapBox/index";
 import geodata from "./data/nyc.geojson";
@@ -109,17 +108,11 @@ class App extends Component {
 
         </div>
         <div className="card text-center">
-        <h6>Number of High Schools</h6>
+        <h6>Number of High Schools in {this.state.sel_nta}</h6>
           <h2 className="numberOfSchools">{this.state.schools.length}</h2>
         </div>
-    
-      
         </div>
-        {/* <div className="col-md-5">
-          <div className="card">
-          <Map results = {this.state.geo}/> 
-          </div>
-        </div> */}
+ 
         <div className="col-md-8">
         <div className="card">
           <MapBox results = {data}/>
