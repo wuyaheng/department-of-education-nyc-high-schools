@@ -13,7 +13,6 @@ const Table = (props) => {
     function onGridReady(params) {
         setGridApi(params.api);
         setGridColumnApi(params.columnApi);
-        params.api.sizeColumnsToFit(); 
     }
  
       let defaultColDef = {
