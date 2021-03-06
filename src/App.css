@@ -68,7 +68,7 @@ body {
   }
 
   .numberOfSchools {
-    font-weight: 600;
+    font-weight: 650;
     color: #455a64;
   }
 
@@ -96,4 +96,11 @@ body {
 
 canvas {
   height: 325px !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .brand-logo {
+    font-size: 1rem !important;
+  }
 }
