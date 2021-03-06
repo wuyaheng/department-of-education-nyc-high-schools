@@ -95,7 +95,7 @@ class App extends Component {
         <>
           <nav>
             <div className="nav-wrapper #455a64 blue-grey darken-2">
-              <a href="#" className="brand-logo center">Department of Education High Schools in 2021</a>
+              <a href="#" className="brand-logo center">High Schools in New York City in 2021</a>
             </div>
           </nav>
         
