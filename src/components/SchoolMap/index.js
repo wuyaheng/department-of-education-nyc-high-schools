@@ -36,7 +36,7 @@ export default (props) => {
 
       props.pins.schoolData.forEach((pin) =>
       (pin.school_name || pin.phone_number || pin.school_email || pin.website) ? 
-      markers.addLayer(L.marker([pin.latitude, pin.longitude]).bindTooltip('<b>' + pin.school_name + '</b><p><b>Phone:</b> ' + pin.phone_number + '</p><p><b>Email:</b> ' + pin.school_email + '</p><p><b>Website:</b> ' + pin.website + '</p><p><b>Location:</b> ' + pin.location.split("(")[0] + '</p><p><b>Admissions Priority:</b> ' + pin.admissionspriority11 + '</p><p><b>Time:</b> ' + pin.start_time + ' - ' + pin.end_time + '</p><p><b>Subway:</b> ' + pin.subway + '</p><p><b>Bus:</b> ' + pin.bus + '</p><p><b>Language Classes:</b> ' + pin.language_classes + '</p><p><b>Advanced Placement Courses: </b> ' + pin.advancedplacement_courses + '</p><p><b>Diploma Endorsements: </b> ' + pin.diplomaendorsements + '</p>') 
+      markers.addLayer(L.marker([pin.latitude, pin.longitude]).bindTooltip('<b>' + fixUndefined(pin.school_name) + '</b><p><b>Phone:</b> ' + fixUndefined(pin.phone_number) + '</p><p><b>Email:</b> ' + fixUndefined(pin.school_email) + '</p><p><b>Website:</b> ' + fixUndefined(pin.website) + '</p><p><b>Location:</b> ' + pin.location.split("(")[0] + '</p><p><b>Admissions Priority:</b> ' + fixUndefined(pin.admissionspriority11) + '</p><p><b>Time:</b> ' + fixUndefined(pin.start_time) + ' - ' + fixUndefined(pin.end_time) + '</p><p><b>Subway:</b> ' + fixUndefined(pin.subway) + '</p><p><b>Bus:</b> ' + fixUndefined(pin.bus) + '</p><p><b>Language Classes:</b> ' + fixUndefined(pin.language_classes) + '</p><p><b>Advanced Placement Courses: </b> ' + fixUndefined(pin.advancedplacement_courses) + '</p><p><b>Diploma Endorsements: </b> ' + fixUndefined(pin.diplomaendorsements) + '</p>') 
    ) : null );
 
      // Add our marker cluster layer to the map
@@ -46,15 +46,15 @@ export default (props) => {
               function chooseColor(borough) {
                 switch (borough) {
                 case "Brooklyn":
-                return "yellow";
+                return "#bac7be";
                 case "Bronx":
-                return "red";
+                return "#8d99ae";
                 case "Manhattan":
-                return "orange";
+                return "#a0ced9";
                 case "Queens":
-                return "green";
+                return "#cc8b86";
                 case "Staten Island":
-                return "purple";
+                return "#f5cb5c";
                 default:
                 return "black";
                 }
@@ -66,7 +66,7 @@ export default (props) => {
                     return {
                     color: "white",
                     fillColor: chooseColor(feature.properties.borough),
-                    fillOpacity: 0.5,
+                    fillOpacity: 0.8,
                     weight: 1.5
                     };
                 },
@@ -75,7 +75,7 @@ export default (props) => {
                     mouseover: function(event) {
                         layer = event.target;
                         layer.setStyle({
-                        fillOpacity: 0.9
+                        fillOpacity: 1
                         });
                     },
                     mouseout: function(event) {

@@ -4,6 +4,7 @@ import ChooseNTA from "./components/ChooseNTA/index";
 import MapBox from "./components/MapBox/index";
 import geodata from "./data/nyc.geojson";
 import Table from "./components/Table/index";
+import BoroughChart from "./components/BoroughChart/index";
 import axios from "axios";
 
 const ALLNEIGHBORHOOD = "All Neighborhood"
@@ -110,6 +111,9 @@ class App extends Component {
         <div className="card text-center">
         <h6>Number of High Schools in {this.state.sel_nta}</h6>
           <h4 className="numberOfSchools">{this.state.schools.length}</h4>
+        </div>
+        <div className="card">
+        <BoroughChart results={this.state.schools}/> 
         </div>
         </div>
  

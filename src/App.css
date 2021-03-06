@@ -7,11 +7,11 @@ body {
   
 
   #map-container {
-    height: 70vh;
+    height: 80vh;
   }
 
   #mapid {
-    height: 70vh;
+    height: 80vh;
   }
   
   .leaflet-popup-content {
@@ -92,4 +92,8 @@ body {
 
 .ag-body-horizontal-scroll-viewport {
     overflow-x: none !important;
+}
+
+canvas {
+  height: 300px !important;
 }
