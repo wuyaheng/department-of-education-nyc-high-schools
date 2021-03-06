@@ -36,7 +36,7 @@ export default (props) => {
 
       props.pins.schoolData.forEach((pin) =>
       (pin.school_name || pin.phone_number || pin.school_email || pin.website) ? 
-      markers.addLayer(L.marker([pin.latitude, pin.longitude]).bindTooltip('<b>' + pin.school_name + '</b><p><b>Phone:</b> ' + pin.phone_number + '</p><p><b>Email:</b> ' + pin.school_email + '</p><p><b>Website:</b> ' + pin.website + '</p><p><b>Location:</b> ' + pin.location.split("(")[0] + '</p><p><b>Admissions Priority:</b> ' + pin.admissionspriority11 + '</p><p><b>Time:</b> ' + pin.start_time + ' - ' + pin.end_time + '</p><p><b>Subway:</b> ' + pin.subway + '</p><p><b>Bus:</b> ' + pin.bus + '</p><p><b>Language Classes:</b> ' + pin.language_classes + '</p>') 
+      markers.addLayer(L.marker([pin.latitude, pin.longitude]).bindTooltip('<b>' + pin.school_name + '</b><p><b>Phone:</b> ' + pin.phone_number + '</p><p><b>Email:</b> ' + pin.school_email + '</p><p><b>Website:</b> ' + pin.website + '</p><p><b>Location:</b> ' + pin.location.split("(")[0] + '</p><p><b>Admissions Priority:</b> ' + pin.admissionspriority11 + '</p><p><b>Time:</b> ' + pin.start_time + ' - ' + pin.end_time + '</p><p><b>Subway:</b> ' + pin.subway + '</p><p><b>Bus:</b> ' + pin.bus + '</p><p><b>Language Classes:</b> ' + pin.language_classes + '</p><p><b>Advanced Placement Courses: </b> ' + pin.advancedplacement_courses + '</p><p><b>Diploma Endorsements: </b> ' + pin.diplomaendorsements + '</p>') 
    ) : null );
 
      // Add our marker cluster layer to the map

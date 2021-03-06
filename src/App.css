@@ -3,16 +3,13 @@ body {
     margin: 0;
   }
   
-  #map {
-    height: 60vh;
-  }
 
   #map-container {
-    height: 60vh;
+    height: 70vh;
   }
 
   #mapid {
-    height: 60vh;
+    height: 70vh;
   }
   
   .leaflet-popup-content {
@@ -71,6 +68,10 @@ body {
   .numberOfSchools {
     font-weight: 600;
     color: #455a64;
+  }
+
+  h6 .selectorLabel {
+    color: #455a64 !important;
   }
 
   .leaflet-tooltip{
