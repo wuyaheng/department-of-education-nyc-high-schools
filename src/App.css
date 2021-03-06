@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
     padding: 0;
     margin: 0;
@@ -70,8 +72,9 @@ body {
     color: #455a64;
   }
 
-  h6 .selectorLabel {
+  h6 {
     color: #455a64 !important;
+    font-family: 'Poppins', sans-serif;
   }
 
   .leaflet-tooltip{

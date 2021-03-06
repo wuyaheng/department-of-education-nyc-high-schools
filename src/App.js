@@ -103,13 +103,13 @@ class App extends Component {
         <div className="row mb-0">
         <div className="col-md-4">
         <div className="card">
-      <h6 className="selectorLabel" className="p-0 mt-1 mb-1 text-center"><b>Select a Neighborhood</b></h6> 
+      <h6 className="p-0 mt-1 mb-1"><b>&nbsp;Select a Neighborhood</b></h6> 
         <ChooseNTA results={this.state.nta} handleInputChange={this.handleInputChange} /> 
 
         </div>
         <div className="card text-center">
         <h6>Number of High Schools in {this.state.sel_nta}</h6>
-          <h2 className="numberOfSchools">{this.state.schools.length}</h2>
+          <h4 className="numberOfSchools">{this.state.schools.length}</h4>
         </div>
         </div>
  
