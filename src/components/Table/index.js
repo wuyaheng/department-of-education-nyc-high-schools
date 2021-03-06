@@ -26,7 +26,7 @@ const Table = (props) => {
     let rowData = []
     props.results.map((ele, i) => rowData.push( 
       {School_Name: "<b>" + ele.school_name + "</b>", 
-       Overview: ele.overview_paragraph, 
+       School_Overview: ele.overview_paragraph, 
        Academic_Opportunities: "<li>" + ele.academicopportunities1 +"</li><li>"+ ele.academicopportunities2 + "</li><li>" + ele.academicopportunities3 + "</li><li>" + ele.academicopportunities4 + "</li><li>" + ele.academicopportunities5 + "</li>"}
       ))
 
@@ -41,10 +41,10 @@ const Table = (props) => {
         flex: 1,
       },
       {
-        field: 'Overview',
-        headerName: 'Overview',
+        field: 'School_Overview',
+        headerName: 'School_Overview',
         cellRenderer: function(params) {
-          return params.data.Overview;
+          return params.data.School_Overview;
         },
         flex: 2,
       },
@@ -66,7 +66,7 @@ const Table = (props) => {
                 columnDefs={columnDefs}
                 > 
                 <AgGridColumn field="School_Name"></AgGridColumn>
-                <AgGridColumn field="Overview"></AgGridColumn>
+                <AgGridColumn field="School_Overview"></AgGridColumn>
                 <AgGridColumn field="Academic_Opportunities"></AgGridColumn>
             </AgGridReact>
         </div>
