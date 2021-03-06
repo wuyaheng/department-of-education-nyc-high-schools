@@ -14,8 +14,7 @@ class App extends Component {
     geo: [],
     nta: [],
     sel_nta: "",
-    schools: [],
-    filteredSchools: [] 
+    schools: [] 
   }
 
   componentDidMount() {
@@ -87,6 +86,12 @@ class App extends Component {
 
 
   render() { 
+
+      let data = {
+        geoData: this.state.geo,
+        schoolData: this.state.schools  
+      }
+
       return (
         <>
           <nav>
@@ -97,7 +102,7 @@ class App extends Component {
         
         <div className="container-fluid mt-2">
         <div className="row mb-0">
-        <div className="col-md-2">
+        <div className="col-md-4">
         <div className="card">
       <h6 className="p-0 mt-1 mb-1"><b>Select a Neighborhood</b></h6> 
         <ChooseNTA results={this.state.nta} handleInputChange={this.handleInputChange} /> 
@@ -110,14 +115,14 @@ class App extends Component {
     
       
         </div>
-        <div className="col-md-5">
+        {/* <div className="col-md-5">
           <div className="card">
           <Map results = {this.state.geo}/> 
           </div>
-        </div>
-        <div className="col-md-5">
+        </div> */}
+        <div className="col-md-8">
         <div className="card">
-          <MapBox results = {this.state.schools}/>
+          <MapBox results = {data}/>
           </div>
         </div>
         </div>

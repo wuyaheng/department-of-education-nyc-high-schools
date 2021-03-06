@@ -1,6 +1,5 @@
 import React from "react";
 import L from "leaflet";
-import * as d3 from "d3";
 
 
 export default ({results=[]}) => {
