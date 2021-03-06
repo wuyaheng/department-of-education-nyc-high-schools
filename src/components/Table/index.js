@@ -48,7 +48,7 @@ const Table = (props) => {
         cellRenderer: function(params) {
           return params.data.Overview;
         },
-        flex: 1,
+        flex: 2,
       },
       {
         field: 'Academic_Opportunities',
@@ -56,7 +56,7 @@ const Table = (props) => {
         cellRenderer: function(params) {
           return params.data.Academic_Opportunities;
         },
-        flex: 1,
+        flex: 2,
       }]
 
     return (

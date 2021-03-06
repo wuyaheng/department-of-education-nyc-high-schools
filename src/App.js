@@ -120,7 +120,7 @@ class App extends Component {
         </div>
         </div>
 
-        <div className="row mb-0">
+        <div className="row mb-3">
       <div className="col-md-12 table-responsive">
         <Table results={this.state.schools} /> 
       </div>
