@@ -7,11 +7,11 @@ body {
   
 
   #map-container {
-    height: 80vh;
+    height: 550px;
   }
 
   #mapid {
-    height: 80vh;
+    height: 550px;
   }
   
   .leaflet-popup-content {
@@ -95,5 +95,5 @@ body {
 }
 
 canvas {
-  height: 300px !important;
+  height: 325px !important;
 }
