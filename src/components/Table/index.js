@@ -17,7 +17,6 @@ const Table = (props) => {
     }
  
       let defaultColDef = {
-        flex: 1,
         resizable: true,
         sortable: true,
         wrapText: true,
