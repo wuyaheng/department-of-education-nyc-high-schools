@@ -3,85 +3,37 @@ import './App.css';
 import ChooseNTA from "./components/ChooseNTA/index";
 import MapBox from "./components/MapBox/index";
 import geodata from "./data/nyc.geojson";
+import schoolData from "./data/schoolData.json";
+import ntaData from "./data/ntaData.json";
 import Table from "./components/Table/index";
 import BoroughChart from "./components/BoroughChart/index";
-import axios from "axios";
-
 const ALLNEIGHBORHOOD = "All Neighborhood"
 
 class App extends Component {
-  state = {
-    geo: [],
-    nta: [],
-    sel_nta: "",
-    schools: [] 
-  }
-
-  componentDidMount() {
-    this.setState(
-      {
-        sel_nta: ALLNEIGHBORHOOD,
-      },
-      () => {
-      this.fetchSchools()
-      });
-    this.fetchdata()
-    this.fetchnta();
-  }
-
-  fetchdata = async () => {
-    try {
-      const res = await axios.get(geodata);
-      this.setState({
-        geo: res.data.features
-      });
-    } catch (error) {
-      console.log(error)
+  constructor(props) {
+    super(props) 
+    const dropdownNta = ntaData.map((x) => x.nta)
+    const dropdown = [ALLNEIGHBORHOOD,...dropdownNta]
+    this.state = {
+      geo: geodata.features,
+      nta: dropdown,
+      sel_nta: ALLNEIGHBORHOOD
     }
-  } 
-
-
-  fetchnta = async () => {
-    try {
-      const res = await axios.get(
-        'https://data.cityofnewyork.us/resource/qpj9-6qjn.json?$group=nta&$select=nta'
-      );
-      const dropdownNta = res.data.map((x) => x.nta)
-      const dropdown = [ALLNEIGHBORHOOD,...dropdownNta]
-      this.setState({
-        nta: dropdown
-      });
-    } catch (error) {
-      console.log(error)
-    }
-  } 
+  }
 
   handleInputChange = (event) => {
     this.setState(
       {
         sel_nta: event.target.value
-      },
-      () => {
-      this.fetchSchools() 
       })
-
   }
 
-
-  fetchSchools = async () => { 
-    let options = {}
+  getSchoolsData = () => { 
+    let schoolDataToDisplay = schoolData
     if (this.state.sel_nta !== ALLNEIGHBORHOOD) {
-      options = { 
-        params: {
-          nta: this.state.sel_nta 
-        }
-      }
+      schoolDataToDisplay = schoolData.filter(item => item.nta === this.state.sel_nta)
     }
-    const res = await axios.get('https://data.cityofnewyork.us/resource/qpj9-6qjn.json',options)
-
-    this.setState({
-      schools: res.data
-    })
+    return schoolDataToDisplay
   }
 
 
@@ -89,7 +41,7 @@ class App extends Component {
 
       let data = {
         geoData: this.state.geo,
-        schoolData: this.state.schools  
+        schoolData: this.getSchoolsData()
       }
 
       return (
@@ -110,10 +62,10 @@ class App extends Component {
         </div>
         <div className="card text-center">
         <h6>Number of High Schools in {this.state.sel_nta}</h6>
-          <h4 className="numberOfSchools">{this.state.schools.length}</h4>
+          <h4 className="numberOfSchools">{data.schoolData.length}</h4>
         </div>
         <div className="card">
-        <BoroughChart results={this.state.schools}/> 
+        <BoroughChart results={data.schoolData}/> 
         </div>
         </div>
  
@@ -126,7 +78,7 @@ class App extends Component {
 
         <div className="row mb-3">
       <div className="col-md-12 table-responsive">
-        <Table results={this.state.schools} /> 
+        <Table results={data.schoolData} /> 
       </div>
       </div>
         </div> 
